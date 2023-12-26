@@ -1,16 +1,11 @@
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+
+      <button type="button" className="my-button">my first button</button>
+
+
+      <p>React homework template</p> 
     </div>
   );
 };

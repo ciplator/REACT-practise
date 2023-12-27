@@ -18,20 +18,45 @@ const productsData = [
     discount: null,
   },
 ];
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
 
 export const App = () => {
   return (
-    <div>
-      <button type="button" className="my-button">
-        my first button
-      </button>
+    <section>
+      <h1>Hello FSON89🥳</h1>
 
-      <Product title="taco with lime" price="10.99" discount={null} />
-      <Product title="taco L" price="8.99" discount={1.5} />
-      <Product title="taco M" price="6.99" discount={2.33} />
+      <ul>
+        {months.map(month => <li key={month}>{month}</li>)}
+      </ul>
 
-      <p>React homework template</p>
-    </div>
+      {productsData.map(product => {
+        return (
+          <Product
+            key={product.id}
+            title={product.title}
+            price={product.price}
+            discount={product.discount}
+          />
+        );
+      })}
+
+      {/* <Product title="Tacos With Lime" price="10.99" discount={null} />
+      <Product title="Tacos L" price="7.66" discount={1.5} />
+      <Product title="Tacos S" price="4.55" discount={2.33} /> */}
+    </section>
   );
 };
 const Product = ({ title, price, discount }) => {
@@ -45,7 +70,7 @@ const Product = ({ title, price, discount }) => {
       <h2>
         {title} <span></span>
       </h2>
-      {discount && <h3> Discount :{discount}$</h3>}
+      {discount ? (<h3> Discount :{discount}$</h3>) : (<p>sorry </p> )}
       <p>Price: {price}</p>
       <button type="button"> Add to cart</button>
     </div>
